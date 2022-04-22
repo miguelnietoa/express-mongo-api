@@ -2,6 +2,8 @@ import 'dotenv/config';
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import logger from 'morgan';
+import cors from 'cors';
+
 import { connect, disconnect } from './src/configs/db.config.js';
 
 import indexRouter from './src/routes/index.routes.js';
@@ -11,6 +13,7 @@ const app = express();
 
 // Middlewares
 app.use(logger('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
