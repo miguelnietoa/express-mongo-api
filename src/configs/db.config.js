@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 import mongoose from 'mongoose';
-import 'dotenv/config';
 
 export const connect = async () => {
   try {
